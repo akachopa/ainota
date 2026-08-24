@@ -122,7 +122,7 @@ class Document extends Model
      */
     public function latestExtraction(): HasOne
     {
-        return $this->hasOne(AiExtraction::class)->latestOfMany();
+        return $this->hasOne(AiExtraction::class)->latest('created_at');
     }
 
     /**

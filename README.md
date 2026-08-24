@@ -13,6 +13,12 @@ Laravel 13, Inertia + Vue 3, PostgreSQL, Redis, Horizon, object storage privat.
 3. `php artisan key:generate && php artisan migrate --seed`
 4. `composer run dev` (atau `php artisan serve` + `npm run dev` + `php artisan horizon`)
 
+Worker harus mendengar antrian `uploads,duplicate,ai,accounting,exports,notifications,critical,default`. Horizon sudah dikonfigurasi untuk itu. Tanpa Horizon:
+
+```bash
+php artisan queue:work --queue=critical,uploads,duplicate,ai,accounting,exports,notifications,default
+```
+
 Akun demo setelah seed:
 
 - `owner@example.test` / `password`
