@@ -1,0 +1,27 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+
+parameters:
+    paths:
+        - app/
+        - bootstrap/app.php
+        - config/
+        - database/
+        - routes/
+
+    level: 5
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        - identifier: nullsafe.neverNull
+        - identifier: argument.type
+        - identifier: property.notFound
+        - identifier: return.type
+        - identifier: method.nonObject
+        - identifier: method.notFound
+        - identifier: foreach.emptyArray
+        - identifier: nullCoalesce.offset
+        - identifier: property.nonObject
+        - identifier: identical.alwaysFalse
+        - identifier: function.impossibleType
